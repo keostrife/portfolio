@@ -1,9 +1,10 @@
 Portfolio::Application.routes.draw do
-  get "static_pages/home"
+  root :to => 'static_pages#home'
+  match '/home', to: 'static_pages#home'
 
-  get "static_pages/lab"
+  match '/contact', to: 'static_pages#contact'
 
-  get "static_pages/contact"
+  match '/lab', to: 'static_pages#lab'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

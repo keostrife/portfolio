@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolio</title>
+  <title><%= yield(:title) %> - Keo Strife Portfolio</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="seo">
+	<h1><%= yield(:title) %> - Keo Strife Portfolio</h1>
+	<h2>Keo Strife, graduated from Humber College and working for Babyrobot as a web developer! Web and software developer!</h2>
+	<p> seo Keo Strife, Humber College, Graduation, Graduated, Web Software Developer, HTML HTML5 CSS CSS2 CSS3 Javascrip Js Jquery AngularJS Bootstrap PHP MySQL Ruby on Rails Python Objective C Objective-C iOS</p>
+</div>
+<header>
+	<div id="logo"></div>
+	<div id="account"></div>
+	<nav>
+		<ul>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+		</ul>
+	</nav>
+</header>
 <%= yield %>
 
 </body>
