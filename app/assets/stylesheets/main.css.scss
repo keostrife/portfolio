@@ -26,6 +26,15 @@
 		text-transform: uppercase;
 	}
 
+	section {
+		position: relative;
+		img {
+			width: 220px;
+			position: absolute;
+			bottom: 0;
+		}
+	}
+
 	footer {
 		border-top: 1px solid #eaeaea;
 		margin-top: 45px;
