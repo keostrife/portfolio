@@ -1,0 +1,107 @@
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Marmelad);
+@import url(http://fonts.googleapis.com/css?family=Average+Sans);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('<%= asset_path('fontsWebSymbols-Regular-webfont.eot') %>');
+    src: url('<%= asset_path('WebSymbols-Regular-webfont.eot?#iefix') %>') format('embedded-opentype'),
+         url('<%= asset_path('WebSymbols-Regular-webfont.woff') %>') format('woff'),
+         url('<%= asset_path('WebSymbols-Regular-webfont.ttf') %>') format('truetype'),
+         url('<%= asset_path('WebSymbols-Regular-webfont.svg#WebSymbolsRegular') %>') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.seo, .hidden {
+	display: none;
+}
+
+.fancy_font1 {
+	font-family: 'Ubuntu Mono', sans-serif;
+}
+
+.fancy_font2 {
+	font-family: 'Inconsolata', sans-serif;
+}
+
+#wrapper {
+	max-width: 978px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.hero-unit h1 {
+	margin-bottom: 30px;
+}
+
+.symbol {
+	font-family: 'WebSymbolsRegular';
+}
+
+header {
+	margin-top: 10px;
+	margin-bottom: 40px;
+	font-family: 'Average Sans', sans-serif;
+	text-transform: uppercase;
+	li.pull-right {
+		line-height: 38px;
+		height: 38px;
+		position: relative;
+		cursor: pointer;
+		ul {
+			opacity: 0;
+			position: relative;
+			right: 30px;
+			background: white;
+			transition: all 0.3s ease-in-out;
+			list-style: none;
+		}
+		> span + span:after {
+			content: "]";
+		}
+		&:hover {
+			> span + span:after {
+				content: "[";
+				color: red;
+			}
+			ul {
+				opacity: 1;
+				right: 0;
+			}
+		}
+	}
+}
+
+section {
+	position: relative;
+}
+
+footer {
+	border-top: 1px solid #eaeaea;
+	margin-top: 45px;
+	padding-top: 5px;
+	a {
+		font-family: 'Marmelad', sans-serif;
+		&:hover {
+			color: #222;
+		}
+	}
+	small {
+		float: left;
+	}
+	ul {
+		float: right;
+		list-style: none;
+		li {
+			float: left;
+			margin-left: 10px;
+		}
+	}
+	small {
+		font-size: 1em;
+	}
+}
+

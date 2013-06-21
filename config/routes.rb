@@ -1,7 +1,4 @@
 Portfolio::Application.routes.draw do
-  get "blog/dashboard"
-
-  get "blog/view"
 
   root :to => 'static_pages#home'
   match '/home', to: 'static_pages#home'
@@ -13,6 +10,8 @@ Portfolio::Application.routes.draw do
   match '/blog', :to => 'blog#dashboard'
 
   match '/blog/:postID', :to => 'blog#view'
+
+  match '/signup', to: 'blog#signup'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

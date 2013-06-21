@@ -4,4 +4,7 @@ class BlogController < ApplicationController
 
   def view
   end
+
+  def signup
+  end
 end

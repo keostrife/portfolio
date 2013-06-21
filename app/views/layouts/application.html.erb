@@ -23,7 +23,13 @@
 			<li class="<%= "active" if yield(:title) == "BLOG" %>"><%= link_to "Blog", blog_path %></li>
 			<li class="<%= "active" if yield(:title) == "LAB" %>"><%= link_to "Lab", lab_path %></li>
 			<li class="<%= "active" if yield(:title) == "CONTACT" %>"><%= link_to "Contact", contact_path %></li>
-			<li class="pull-right"> Account </li>
+			<li class="pull-right">
+				<span class="symbol">U</span> Guest <span class="symbol"></span>
+				<ul>
+					<li> <%= link_to "Sign UP", signup_path %></li>
+					<li> <%= link_to "Sign IN", "#" %></li>
+				</ul>
+			</li>
 		</ul>
 	</nav>
 </header>
