@@ -24,6 +24,10 @@
 
     // Additional initialization code such as adding Event Listeners goes here
     FB.login();
+
+    FB.api('/me', function(response) {
+	  alert(response.name);
+	});
   };
 
   // Load the SDK asynchronously
