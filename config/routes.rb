@@ -8,6 +8,9 @@ Portfolio::Application.routes.draw do
   match '/lab', to: 'static_pages#lab'
 
   match '/blog', :to => 'blog#index'
+
+  match '/session/facebook', :to => 'session#facebook'
+
   resources :blog
   match '/blog/:postID', :to => 'blog#show'
 
