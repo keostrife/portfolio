@@ -7,9 +7,9 @@ Portfolio::Application.routes.draw do
 
   match '/lab', to: 'static_pages#lab'
 
-  match '/blog', :to => 'blog#dashboard'
-
-  match '/blog/:postID', :to => 'blog#view'
+  match '/blog', :to => 'blog#index'
+  resources :blog
+  match '/blog/:postID', :to => 'blog#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,7 +1,9 @@
 class BlogController < ApplicationController
-  def dashboard
+  def index
+  	@posts = Blog.all
   end
 
-  def view
+  def show
+  	@post = Blog.find(params[:id])
   end
 end

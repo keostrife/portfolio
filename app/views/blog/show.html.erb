@@ -1,0 +1,7 @@
+<% provide(:title, 'BLOG') %>
+<h1><%= @post.title %></h1>
+<small> <%= @post.created_at.to_s(:post_date) %> </small>
+<p> <%= @post.content.html_safe %></p>
+
+<h3>Comment:</h3>
+
