@@ -4,4 +4,7 @@
 <p> <%= @post.content.html_safe %></p>
 
 <h3>Comment:</h3>
-
+<% @comments.each do |comment| %>
+	<p>From: <%= comment.user_facebook %> </p>
+	<p>Content: <%= comment.comment_content %></p>
+<% end %>
