@@ -21,13 +21,6 @@
       status     : true,                                 // Check Facebook Login status
       xfbml      : true                                  // Look for social plugins on the page
     });
-
-    // Additional initialization code such as adding Event Listeners goes here
-    FB.login();
-
-    FB.api('/me', function(response) {
-	  alert(response.name);
-	});
   };
 
   // Load the SDK asynchronously
@@ -39,7 +32,6 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-
 
 <div id="wrapper">
 <div class="seo">
@@ -57,7 +49,7 @@
 			<li class="pull-right">
 				<span class="symbol">U</span> Guest <span class="symbol"></span>
 				<ul>
-					<li> SSO is currently unavailable! </li>
+					<li> <fb:login-button width="100" max-rows="1"></fb:login-button> </li>
 				</ul>
 			</li>
 		</ul>
