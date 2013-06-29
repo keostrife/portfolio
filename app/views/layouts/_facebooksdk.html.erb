@@ -57,7 +57,7 @@
 
   $.ajax({
 	      	type: "POST",
-	      	url: "http://strife.herokuapp.com/session/facebook",
+	      	url: "http://localhost:3000/session/facebook",
 	      	data: {
 	      		name: 'response.name',
 	      		id: 'response.id',
@@ -65,6 +65,9 @@
 	      		facebook: 'response.username'
 	      	},
 	      	success: function(data){
+	      		alert(data);
+	      	},
+	      	error: function(data) {
 	      		alert(data);
 	      	}
 	      });
