@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def userInfo(attr)
-		if attr = 'user'
+		if attr == 'user'
 			if session[:init] = 'yes'
 				session[:user]
 			else
