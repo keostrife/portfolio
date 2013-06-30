@@ -14,6 +14,6 @@ class SessionController < ApplicationController
 
   	def signout
   		reset_session
-  		redirect_to root
+  		redirect_to root_path
   	end
 end
