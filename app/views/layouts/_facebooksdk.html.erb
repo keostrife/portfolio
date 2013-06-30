@@ -25,7 +25,7 @@
 	      console.log('Yosh!!!');
 
 	      <% if session[:init] != 'yes' %>
-	      <% end %>
+	      
 	      FB.api('/me', function(response) {
 	        $.ajax({
 		      	type: "POST",
@@ -42,6 +42,7 @@
 		      	}
 		      });
 	      });
+	      <% end %>
 	      
 
 	    } else if (response.status === 'not_authorized') {
