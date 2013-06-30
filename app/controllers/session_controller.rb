@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
 	def facebook
-		if(params.has_key?(:name))
+		if params.has_key?(:name)
 			session[:name] = params[:name]
 			session[:id] = params[:id]
 			session[:email] = params[:email]

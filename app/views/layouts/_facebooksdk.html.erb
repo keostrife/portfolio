@@ -24,7 +24,7 @@
 
 	      console.log('Yosh!!!');
 
-	      <%= if session[:init] != yes %>
+	      <% if session[:init] != 'yes' %>
 	      FB.api('/me', function(response) {
 	        $.ajax({
 		      	type: "POST",
