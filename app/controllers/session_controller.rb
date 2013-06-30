@@ -11,4 +11,8 @@ class SessionController < ApplicationController
 	  		end
   		end
   	end
+
+  	def signout
+  		reset_session
+  	end
 end

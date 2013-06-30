@@ -11,6 +11,8 @@ Portfolio::Application.routes.draw do
 
   match '/session/facebook', :to => 'session#facebook'
 
+  match '/session/signout', :to => 'session#signout'
+
   resources :blog
   match '/blog/:postID', :to => 'blog#show'
 
