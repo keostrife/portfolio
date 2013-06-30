@@ -8,7 +8,7 @@ module ApplicationHelper
 			end
 		else
 			if session[:init] == 'yes'
-				link_to "Sign Out", session_signout_path
+				link_to "Sign Out", session_signout_path, :id => 'fbSignOut'
 			else
 				'<fb:login-button width="100" max-rows="1"></fb:login-button>'
 			end

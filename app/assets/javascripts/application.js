@@ -15,3 +15,8 @@
 //= require_tree .
 
 
+$("#fbSignOut").on('click', function(e){
+	FB.logout(function(response) {
+	  FB.Auth.setAuthResponse(null, 'unknown');
+	});
+})
