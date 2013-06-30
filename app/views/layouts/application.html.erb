@@ -21,9 +21,9 @@
 			<li class="<%= "active" if yield(:title) == "LAB" %>"><%= link_to "Lab", lab_path %></li>
 			<li class="<%= "active" if yield(:title) == "CONTACT" %>"><%= link_to "Contact", contact_path %></li>
 			<li class="pull-right">
-				<span class="symbol">U</span> Guest <span class="symbol"></span>
+				<span class="symbol">U</span> <%= session[:init].is_blank? ? 'Guest' : session[:user] %> <span class="symbol"></span>
 				<ul>
-					<li> <fb:login-button width="100" max-rows="1"></fb:login-button> </li>
+					<li> <%= session[:init].is_blank? ? '<fb:login-button width="100" max-rows="1"></fb:login-button>' || 'sign out' %> </li>
 				</ul>
 			</li>
 		</ul>

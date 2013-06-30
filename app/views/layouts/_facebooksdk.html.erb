@@ -23,6 +23,8 @@
 	      // have logged in to the app.
 
 	      console.log('Yosh!!!');
+
+	      <%= if session[:init] != yes %>
 	      FB.api('/me', function(response) {
 	        $.ajax({
 		      	type: "POST",
@@ -35,10 +37,11 @@
 		      		
 		      	},
 		      	success: function(data){
-		      		alert(data.name);
+		      		//alert(data.name);
 		      	}
 		      });
 	      });
+	      <% end %>
 
 	    } else if (response.status === 'not_authorized') {
 	      // In this case, the person is logged into Facebook, but not into the app, so we call
