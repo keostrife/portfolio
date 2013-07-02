@@ -21,7 +21,7 @@
 			<li class="<%= "active" if yield(:title) == "LAB" %>"><%= link_to "Lab", lab_path %></li>
 			<li class="<%= "active" if yield(:title) == "CONTACT" %>"><%= link_to "Contact", contact_path %></li>
 			<li class="pull-right">
-				<%= userInfo('user') %>
+				<%= userInfo('user').html_safe %>
 				<%= userInfo('login_btn').html_safe %>
 			</li>
 		</ul>

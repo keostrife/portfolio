@@ -4,7 +4,7 @@ module ApplicationHelper
 			if session[:init] == 'yes'
 				gravatar_id = Digest::MD5::hexdigest(session[:email])
 				gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
-				image_tag(gravatar_url, alt: session[:name], class: "gravatar") + session[:name]
+				'<img alt="" class="gravatar" src="'+gravatar_url+'">' + session[:name]
 			else
 				'<span class="symbol">U</span> Guest'
 			end
