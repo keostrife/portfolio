@@ -21,9 +21,9 @@
 			<li class="<%= "active" if yield(:title) == "LAB" %>"><%= link_to "Lab", lab_path %></li>
 			<li class="<%= "active" if yield(:title) == "CONTACT" %>"><%= link_to "Contact", contact_path %></li>
 			<li class="pull-right">
-				<span class="symbol">U</span> Guest <span class="symbol"></span>
+				<span class="symbol">U</span> <%= userInfo('user') %> <span class="symbol"></span>
 				<ul>
-					<li> <fb:login-button width="100" max-rows="1"></fb:login-button> </li>
+					<li> <%= userInfo('login_btn').html_safe %> </li>
 				</ul>
 			</li>
 		</ul>

@@ -1,4 +1,5 @@
 <% provide(:title, 'BLOG') %>
+<section class="hero-unit" id="blog">
 <% @posts.each do |post| %>
 	<div class="post">
 		<h3> <%= post.title %> </h3>
@@ -6,3 +7,4 @@
 		<p> <%= post.content[0,200] %> ... <%= link_to "See This Post", blog_path + '/' + post.id.to_s %> </a>
 	</div>
 <% end %>
+</section>
