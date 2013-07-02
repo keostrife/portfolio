@@ -2,7 +2,7 @@ module ApplicationHelper
 	def userInfo(attr)
 		if attr == 'user'
 			if session[:init] == 'yes'
-				"<img alt=\"User\" class=\"gravatar\" src=\"https://secure.gravatar.com/avatar/#{Digest::MD5::hexdigest(session[:email].downcase)}\"> #{session[:name]}"
+				"<img alt=\"User\" class=\"gravatar\" src=\"https://secure.gravatar.com/avatar/#{Digest::MD5::hexdigest(session[:email].to_s.downcase)}\"> #{session[:name]}"
 				#session[:name]
 			else
 				'<span class="symbol">U</span> Guest'
