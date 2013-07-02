@@ -22,9 +22,7 @@
 			<li class="<%= "active" if yield(:title) == "CONTACT" %>"><%= link_to "Contact", contact_path %></li>
 			<li class="pull-right">
 				<span class="symbol">U</span> <%= userInfo('user') %> <span class="symbol"></span>
-				<ul>
-					<li> <%= userInfo('login_btn').html_safe %> </li>
-				</ul>
+				 <%= userInfo('login_btn').html_safe %>
 			</li>
 		</ul>
 	</nav>
