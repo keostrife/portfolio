@@ -13,7 +13,7 @@ class SessionController < ApplicationController
 
   	def commentnew
   	  if params.has_key?(:postID)
-  	    @comment = Comment.new(postID: params[:postID], user_email: "", user_name: "", user_facebook: "", comment_content: params[:comment])
+  	    @comment = Comment.new(postID: params[:postID], user_email: params[:user_email], user_name: "", user_facebook: "", comment_content: params[:comment])
   	    if @comment.save
 	  	    respond_to do |format|
 	  	        format.json { render:json => params }
