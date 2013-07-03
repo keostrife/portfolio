@@ -11,7 +11,7 @@ module ApplicationHelper
 			if session[:init] == 'yes'
 				''
 			else
-				'<span class="symbol"></span><ul><li><fb:login-button width="100" max-rows="1"></fb:login-button></li></ul>'
+				'<span class="symbol"></span><ul><li><fb:login-button perms="email" width="100" max-rows="1"></fb:login-button></li></ul>'
 			end
 		end
 	end
