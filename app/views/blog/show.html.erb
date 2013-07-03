@@ -6,10 +6,28 @@
 
 <h3>Comment:</h3>
 <% @comments.each do |comment| %>
-	<div class="comment">
-		<p>From: <%= comment.user_facebook %> </p>
-		<p>Content: <%= comment.comment_content %></p>
-	</div>
+		<div class="media">
+			<%= gravatar_for(comment.user_email.to_s).html_safe %>
+			<div class="media-body">
+				<h4 class="media-heading"> <%= comment.user_name %> </h4> <small><%= comment.created_at.to_s(:post_date) %></small> <br>
+				<%= comment.comment_content %>
+			</div>
+		</div>
+<% end %>
 
+<% if session[:init] == 'yes' %>
+	<div class="well">
+		<div class="media">
+			<%= gravatar_for(session[:email].to_s).html_safe %>
+			<div class="media-body">
+				<h4 class="media-heading"> <%= session[:name] %> </h4>
+				<input type="text">
+			</div>
+		</div>
+	</div>
+<% else %>
+	<div class="well">
+		<h5> <span class="symbol">U</span> Sign in with facebook to comment: <fb:login-button perms="email" width="100" max-rows="1"></fb:login-button></h5>
+	</div>
 <% end %>
 </section>

@@ -1,12 +1,12 @@
 module ApplicationHelper
 	def gravatar_for(email)
-		"<img alt=\"user\" class=\"gravatar\" style=\"width: 20px;\" src=\"https://secure.gravatar.com/avatar/#{Digest::MD5::hexdigest(email.downcase)}\">"
+		"<a class=\"pull-left\" href=\"http://secure.gravatar.com/emails/\"> <img class=\"media-object\" data-src=\"holder.js/64x64\" alt=\"user\" class=\"gravatar\" src=\"https://secure.gravatar.com/avatar/#{Digest::MD5::hexdigest(email.downcase)}\"> </a>"
 	end
 
 	def userInfo(attr)
 		if attr == 'user'
 			if session[:init] == 'yes'
-				"#{gravatar_for(session[:email].to_s)} #{session[:name]}"
+				"<a href=\"http://secure.gravatar.com/emails/\"> <img alt=\"user\" class=\"gravatar\" style=\"width: 20px;\" src=\"https://secure.gravatar.com/avatar/#{Digest::MD5::hexdigest(session[:email].to_s.downcase)}\"> </a> #{session[:name]}"
 				#session[:name]
 			else
 				'<span class="symbol">U</span> Guest'
