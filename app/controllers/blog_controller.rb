@@ -9,9 +9,9 @@ class BlogController < ApplicationController
   end
 
   def create
-  	@comment = Comment.new(userID: session[:id], postID: params[:comment][:postID], user_email: session[:email], user_name: session[:name], user_facebook: session[:facebook], comment_content: params[:comment][:content])
+  	@comment = Comment.new(userID: session[:id], postID: params[:comment][:postID], user_email: session[:email].to_s, user_name: session[:name].to_s, user_facebook: session[:facebook].to_s, comment_content: params[:comment][:content].to_s)
     if @comment.save
-      render 'show'
+      render 'show(#{params[:comment][:postID]})'
     end
   end
 end
