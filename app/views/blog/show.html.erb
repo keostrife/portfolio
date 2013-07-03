@@ -1,7 +1,7 @@
 <% provide(:title, 'BLOG') %>
 <section class="hero-unit" id="blog">
 <h1><%= @post.title %></h1>
-<small> <%= @post.created_at.to_s(:post_date) %> </small>
+<small> <%= @post.created_at.to_s(:post_date) %> </small> <br>
 <p> <%= @post.content.html_safe %></p>
 
 <h3>Comment:</h3>
@@ -9,7 +9,7 @@
 		<div class="media">
 			<%= gravatar_for(comment.user_email.to_s).html_safe %>
 			<div class="media-body">
-				<h4 class="media-heading"> <%= comment.user_name %> </h4> <small><%= comment.created_at.to_s(:post_date) %></small> <br>
+				<h4 class="media-heading"> <%= comment.user_name %> <small><%= comment.created_at.to_s(:post_date) %></small> </h4>
 				<%= comment.comment_content %>
 			</div>
 		</div>
@@ -21,7 +21,10 @@
 			<%= gravatar_for(session[:email].to_s).html_safe %>
 			<div class="media-body">
 				<h4 class="media-heading"> <%= session[:name] %> </h4>
-				<input type="text">
+				<form action="" method="post">
+					<textarea name="comment[content]" placeholder="Your Comments" required></textarea>
+					<input type="submit" name="comment[submit]" value="Comment!!">
+				</form>
 			</div>
 		</div>
 	</div>
