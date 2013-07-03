@@ -14,10 +14,12 @@ class SessionController < ApplicationController
 
   	def commentnew
   	  if params.has_key?(:postID)
-  	    @comment = Comment.create(userID: params[:userID], postID: params[:postID], user_email: params[:user_email], user_name: params[:user_name], user_facebook: params[:user_facebook], comment_content: params[:comment])
-  	    respond_to do |format|
-  	        format.json { render:json => params }
-  	    end
+  	    @comment = Comment.new(userID: params[:userID].to_i, postID: params[:postID].to_i, user_email: params[:user_email], user_name: params[:user_name], user_facebook: params[:user_facebook], comment_content: params[:comment])
+  	    if @comment.save
+	  	    respond_to do |format|
+	  	        format.json { render:json => params }
+	  	    end
+  		end
   	  end
   	end
 end
