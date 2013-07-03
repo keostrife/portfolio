@@ -23,12 +23,8 @@
 				<h4 class="media-heading"> <%= session[:name] %> </h4>
 				<%= form_for(@comment) do |f| %>
 					<%= f.text_field :content %>
-					<%= f.submit "Comment", class: "btn btn-primary" %>
+					<%= f.submit "Comment!!", class: "btn btn-primary" %>
 				<% end %>
-				<form action="<%= blog_create_path %>" method="post">
-					<textarea name="comment[content]" placeholder="Your Comments" required></textarea>
-					<input type="submit" name="comment[submit]" value="Comment!!" class="btn btn-primary">
-				</form>
 			</div>
 		</div>
 	</div>
