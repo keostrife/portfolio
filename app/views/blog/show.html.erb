@@ -32,10 +32,10 @@
 		$("#comment_submit").click(function(e){
 			$.ajax({
 			      	type: "POST",
-			      	url: "<%= blog_commentnew_path %>",
+			      	url: "<%= session_commentnew_path %>",
 			      	data: {
-			      			postID: <%= @post.id %>,
-			      			userID: <%= session[:id] %>,
+			      			postID: "<%= @post.id %>",
+			      			userID: "<%= session[:id] %>",
 			      			user_email: "<%= session[:email] %>",
 			      			user_facebook: "<%= session[:facebook] %>",
 			      			user_name: "<%= session[:name] %>",
