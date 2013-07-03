@@ -10,7 +10,7 @@ class BlogController < ApplicationController
   end
 
   def create
-  	@comment = Comment.new(params[:comment])
+  	@comment = Comment.new(userID: params[:comment][:userID], postID: params[:comment][:postID], user_email: params[:comment][:user_email], user_name: params[:comment][:user_name], user_facebook: params[:comment][:user_facebook], comment_content: params[:comment][:content])
     if @comment.save
       redirect_to "/blog/#{params[:comment][:postID]}"
     end
