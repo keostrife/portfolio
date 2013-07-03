@@ -22,6 +22,7 @@
 			<div class="media-body">
 				<h4 class="media-heading"> <%= session[:name] %> </h4>
 				<form action="/blog" method="post">
+					<input type="hidden" name="comment[postID]" value="<%= @post.id %>">
 					<textarea name="comment[content]" placeholder="Your Comments" required></textarea>
 					<input type="submit" name="commit" value="Comment!!" class="btn btn-primary">
 				</form>

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130626202532) do
 
   create_table "comments", :force => true do |t|
     t.integer  "userID"
+    t.integer  "postID"
     t.string   "user_name"
     t.string   "user_email"
     t.string   "user_facebook"
