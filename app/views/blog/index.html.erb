@@ -2,7 +2,7 @@
 <section class="hero-unit" id="blog">
 <% @posts.each do |post| %>
 	<div class="post">
-		<h3> <%= post.title %> <small> <%= post.created_at.to_s(:post_date) %> </small> </h3>
+		<h3> <%= post.title %> <small> <%= post.created_at.to_s(:post_date) %> </small> || <%= get_comment_count(post.id) %> Comments </h3>
 
 		<p> <%= post.content[0,200] %> ... <%= link_to "See This Post", blog_path + '/' + post.id.to_s %> </a>
 	</div>

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130626183152) do
   end
 
   create_table "comments", :force => true do |t|
+    t.integer  "userID"
     t.integer  "postID"
     t.string   "user_name"
     t.string   "user_email"
