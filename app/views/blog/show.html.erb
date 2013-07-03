@@ -15,7 +15,7 @@
 		</div>
 <% end %>
 
-<% if session[:init] != 'yes' %>
+<% if session[:init] == 'yes' %>
 	<div class="well">
 		<div class="media">
 			<%= gravatar_for(session[:email].to_s).html_safe %>
