@@ -36,9 +36,9 @@
 			      	data: {
 			      			postID: <%= @post.id %>,
 			      			userID: <%= session[:id] %>,
-			      			user_email: <%= session[:email] %>,
-			      			user_facebook: <%= session[:facebook] %>,
-			      			user_name: <%= session[:name] %>,
+			      			user_email: "<%= session[:email] %>",
+			      			user_facebook: "<%= session[:facebook] %>",
+			      			user_name: "<%= session[:name] %>",
 			      			comment: $("#comment_content").val()
 
 			      	},
