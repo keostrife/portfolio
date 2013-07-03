@@ -21,11 +21,11 @@
 			<%= gravatar_for(session[:email].to_s).html_safe %>
 			<div class="media-body">
 				<h4 class="media-heading"> <%= session[:name] %> </h4>
-				<%= form_for(@user) do |f| %>
-					<%= f.hidden_field :postID, :value => @post.id %>
-					<%= f.text_area :content %>
-					<%= f.submit "Comment!!", class: "btn btn-primary" %>
-				<% end %>
+				<form action="/blog/create" method="post">
+					<input type="hidden" name="comment[postID]" value="<%= @post.id %>">
+					<textarea name="comment[content]" placeholder="Your Comments" required></textarea>
+					<input type="submit" name="commit" value="Comment!!" class="btn btn-primary">
+				</form>
 			</div>
 		</div>
 	</div>
