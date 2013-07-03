@@ -6,6 +6,7 @@ class BlogController < ApplicationController
   def show
   	@post = Blog.find(params[:id])
   	@comments = Comment.where(postID: params[:id])
+    @comment = Comment.new
   end
 
   def create
