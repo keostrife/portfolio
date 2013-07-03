@@ -22,18 +22,12 @@ ActiveRecord::Schema.define(:version => 20130626202532) do
 
   create_table "comments", :force => true do |t|
     t.integer  "userID"
-    t.integer  "postID"
     t.string   "user_name"
     t.string   "user_email"
     t.string   "user_facebook"
     t.string   "comment_content"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-  end
-
-  create_table "sessions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end
