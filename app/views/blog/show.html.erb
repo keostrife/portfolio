@@ -15,24 +15,41 @@
 		</div>
 <% end %>
 
-<% if session[:init] == 'yes' %>
+<% if session[:init] != 'yes' %>
 	<div class="well">
 		<div class="media">
 			<%= gravatar_for(session[:email].to_s).html_safe %>
 			<div class="media-body">
 				<h4 class="media-heading"> <%= session[:name] %> </h4>
-				<form action="/blog/create" method="post">
-					<input type="hidden" name="comment[postID]" value="<%= @post.id %>">
-					<input type="hidden" name="comment[userID]" value="<%= session[:id] %>">
-					<input type="hidden" name="comment[user_facebook]" value="<%= session[:facebook] %>">
-					<input type="hidden" name="comment[user_name]" value="<%= session[:name] %>">
-					<input type="hidden" name="comment[user_email]" value="<%= session[:email] %>">
-					<textarea name="comment[content]" placeholder="Your Comments" required></textarea>
-					<input type="submit" name="commit" value="Comment!!" class="btn btn-primary">
+				<form action="" method="post">
+					<textarea name="content" placeholder="Your Comments" required id="comment_content"></textarea>
+					<input type="submit" name="submitKeo" value="Comment!!" class="btn btn-primary" id="comment_submit">
 				</form>
 			</div>
 		</div>
 	</div>
+	<script>
+		$("#comment_submit").click(function(e){
+			$.ajax({
+			      	type: "POST",
+			      	url: "<%= blog_commentnew_path %>",
+			      	data: {
+			      			postID: <%= @post.id %>,
+			      			userID: <%= session[:id] %>,
+			      			user_email: <%= session[:email] %>,
+			      			user_facebook: <%= session[:facebook] %>,
+			      			user_name: <%= session[:name] %>,
+			      			comment: $("#comment_content").val()
+
+			      	},
+			      	success: function(data){
+			      		location.reload();
+			      	}
+			      });
+			e.preventDefault();
+		});
+		        /**/
+	</script>
 <% else %>
 	<div class="well">
 		<h5> <span class="symbol">U</span> Sign in with facebook to comment: <fb:login-button perms="email" width="100" max-rows="1"></fb:login-button></h5>
