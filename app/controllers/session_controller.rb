@@ -2,7 +2,6 @@ class SessionController < ApplicationController
 	def facebook
 		if params.has_key?(:name)
 			session[:name] = params[:name]
-			session[:id] = params[:id]
 			session[:email] = params[:email]
 			session[:facebook] = params[:facebook]
 			session[:init] = 'yes'
@@ -14,7 +13,7 @@ class SessionController < ApplicationController
 
   	def commentnew
   	  if params.has_key?(:postID)
-  	    @comment = Comment.new(userID: params[:userID], postID: "", user_email: "", user_name: "", user_facebook: "", comment_content: params[:comment])
+  	    @comment = Comment.new(postID: "", user_email: "", user_name: "", user_facebook: "", comment_content: params[:comment])
   	    if @comment.save
 	  	    respond_to do |format|
 	  	        format.json { render:json => params }
