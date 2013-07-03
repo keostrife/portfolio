@@ -6,7 +6,7 @@ module ApplicationHelper
 	def userInfo(attr)
 		if attr == 'user'
 			if session[:init] == 'yes'
-				"#{session[:email].to_s} #{session[:name]}"
+				"#{gravatar_for(session[:email].to_s)} #{session[:name]}"
 				#session[:name]
 			else
 				'<span class="symbol">U</span> Guest'
