@@ -3,6 +3,8 @@ Portfolio::Application.routes.draw do
   root :to => 'static_pages#home'
   match '/home', to: 'static_pages#home'
 
+  match "/admin", to: 'admin#new'
+
   match '/contact', to: 'static_pages#contact'
 
   match '/lab', to: 'static_pages#lab'

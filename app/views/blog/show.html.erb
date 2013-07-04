@@ -1,6 +1,6 @@
 <% provide(:title, 'BLOG') %>
 <section class="hero-unit" id="blog">
-<h1><%= @post.title %> <small> <%= @post.created_at.to_s(:post_date) %> </small> </h1>
+<h1><%= @post.title %> <br><small> <%= @post.created_at.to_s(:post_date) %> </small> </h1>
 
 <p> <%= @post.content.html_safe %></p>
 
@@ -9,7 +9,7 @@
 		<div class="media">
 			<%= gravatar_for(comment.user_email.to_s).html_safe %>
 			<div class="media-body">
-				<h4 class="media-heading"> <%= comment.user_name %> <small><%= comment.created_at.to_s(:post_date) %></small> </h4>
+				<h4 class="media-heading"> <%= comment.user_name %> <br> <small><%= comment.created_at.to_s(:post_date) %></small> </h4>
 				<%= comment.comment_content %>
 			</div>
 		</div>

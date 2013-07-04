@@ -7,6 +7,7 @@ gem 'bootstrap-sass'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
+	gem 'taps', :require => false
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.11.0'
 end
